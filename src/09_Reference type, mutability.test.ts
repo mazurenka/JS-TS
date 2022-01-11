@@ -58,7 +58,7 @@ test('value type test', () => {
 
 test('deep reference type test', () => {
 
-    let address = { title: 'Minsk'}
+    let address = {title: 'Minsk'}
 
     let user: UserType = {
         name: 'Dimych',
@@ -81,7 +81,7 @@ test('deep reference type test', () => {
 
 test('deep reference array test', () => {
 
-    let address = { title: 'Minsk'}
+    let address = {title: 'Minsk'}
 
     let user: UserType = {
         name: 'Dimych',
@@ -101,6 +101,15 @@ test('deep reference array test', () => {
 
     expect(user.name).toBe('Dmitriy')
     expect(admins[0].name).toBe('Dmitriy')
+})
+
+test('sort array test', () => {
+    let letters = ['a', 'd', 'c', 'b']
+
+    letters.sort();
+
+    expect(letters).toEqual(['a', 'b', 'c', 'd'])
+
 })
 
 
