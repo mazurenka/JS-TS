@@ -1,21 +1,11 @@
-import {UserType} from "./10. immutability";
-
-function makeHairstyle(u: UserType, power: number) {
-    const copy = {
-        ...u,
-        hair: u.hair / power
-    }
-    //copy.hair = u.hair / power
-
-    return copy
-}
+import {makeHairstyle, moveUser, userLaptopType, UserType} from "./10. immutability";
 
 test('reference type test', () => {
     let user: UserType = {
         name: 'Andre',
         hair: 23,
         address: {
-            title: 'Minsk'
+            city: 'Minsk'
         }
     }
 
@@ -23,5 +13,29 @@ test('reference type test', () => {
 
     expect(awesomeUser.hair).toBe(11.5)
     expect(user.hair).toBe(23)
+    expect(awesomeUser.address).toBe(user.address)
+})
+
+test('change address', () => {
+    let user: userLaptopType = {
+        name: 'Andre',
+        hair: 23,
+        address: {
+            city: 'Minsk',
+            house: 12
+        },
+        laptop: {
+            title: 'ASUS'
+        }
+    }
+
+    const movedUser = moveUser(user, 'Kiev')
+
+
+
+    expect(user).not.toBe(movedUser)
+    expect(user.address).not.toBe(movedUser.address)
+    expect(user.laptop).toBe(movedUser.laptop)
+    expect(movedUser.address.city).toBe("Kiev")
 
 })
