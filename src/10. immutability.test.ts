@@ -31,8 +31,6 @@ test('change address', () => {
 
     const movedUser = moveUser(user, 'Kiev')
 
-
-
     expect(user).not.toBe(movedUser)
     expect(user.address).not.toBe(movedUser.address)
     expect(user.laptop).toBe(movedUser.laptop)
