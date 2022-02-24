@@ -21,14 +21,12 @@ promise2
 //     console.log('finish')
 // })
 
-const otherPromise = Promise.all([promise1, promise2])
+//const otherPromise = Promise.all([promise1, promise2])
+const otherPromise2 = Promise.allSettled([promise1, promise2])
 
-otherPromise
-    .then(() => {
-        console.log('finish')
-    })
-    .catch(() => {
-        console.log('initialization failed')
+otherPromise2
+    .then((res) => {
+        console.log(res)
     })
 
 
