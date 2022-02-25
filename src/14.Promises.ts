@@ -52,7 +52,6 @@ const userApi = {
 const pr = userApi.getAllUsers()
 console.log(pr.then(users = > console.log(users))
 
-
 const usersApi = {
     getAllUsers() {
         return Promise.resolve({name: 'D'})
@@ -66,8 +65,26 @@ const usersApi = {
     }
 }
 
+const promise5 = findUserInDB(1)
 
+//const promise5_5 = promise5.then((user) => console.log(user))
 
+axios.get('https://google.com')
+    .then(res => res.data)
+    .then(data => console.log(data))
+
+const makeGoogleRequest = () => {
+    const pr = axios.get('https://google.com')
+    const pr2 = pr.then(res => res.data)
+    return pr2
+}
+
+makeGoogleRequest().then(data => console.log(data))
+
+const makeGoogleRequest2 = () => {
+    return axios.get('https://google.com')
+        .then(res => res.data)
+}
 
 
 
