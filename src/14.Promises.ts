@@ -88,15 +88,15 @@ import {Simulate} from "react-dom/test-utils";
 // })
 
 function getNumber() {
-    return Math.random()
+    //const promise = Promise.resolve(Math.random())
+    const promise = new Promise( () => {
+
+    } )
+    return promise
 }
 
-const n1 = getNumber()
-const n2 = getNumber()
-
-console.log(n1)
-console.log(n2)
-
+getNumber().then((n1: number) => console.log(n1))
+getNumber().then((n2: number) => console.log(n2))
 
 
 
