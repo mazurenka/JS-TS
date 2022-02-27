@@ -98,6 +98,14 @@ function getNumber() {
 getNumber().then((n1: number) => console.log(n1))
 getNumber().then((n2: number) => console.log(n2))
 
+const run = async () => {
+    await repo.saveAsync({name: 'Yo-Yo'})
+    console.log('saved')
+    const data = await repo.readAsync()
+    console.log(data)
+}
+run()
+
 
 
 
