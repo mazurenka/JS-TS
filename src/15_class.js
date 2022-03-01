@@ -92,26 +92,26 @@ u2.hello()*/
 
 
 class User {
-    #name = ''
+    name = ''
 
     constructor(name, site, dayOfBirth) {
-        this.#name = name
+        this.name = name
         this.site = site
         this.dayOfBirth = dayOfBirth
         this.counter = 0
     }
 
     get name() {
-        return this.#name
+        return this.name
     }
 
     set name(value) {
-        return this.#name = value
+        return this.name = value
     }
 
     hello() {
         this.counter++
-        console.log(`Im a ${this.#name} from ${this.site}`)
+        console.log(`Im a ${this.name} from ${this.site}`)
     }
 }
 
@@ -138,10 +138,24 @@ class Coder extends User {
     }
 }
 
-const coder1 = new Coder('Andre coder', 'google.com', new Date(1982, 1, 1), 'JS')
+class Hacker extends Coder {
+    constructor(name, site, dayOfBirth, tech) {
+        super();
+        this.tech = '.Net'
+        this.name = 'X'
+    }
+    code() {
+        console.log(`I'll hack everything`)
+    }
+}
 
-coder1.hello()
+const coder1 = new Coder('Andre coder', 'google.com', new Date(1982, 1, 1), 'JS')
 coder1.code()
+
+const hacker = new Hacker('Andre coder', 'google.com', new Date(1982, 1, 1), 'JS')
+hacker.code()
+hacker.hello()
+
 
 
 
