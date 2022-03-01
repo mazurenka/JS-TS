@@ -36,3 +36,6 @@ const u2 = userFabric('Dmitriy')
 u1.hello()
 u2.hello()
 
+/////////////////////////////////////
+
+

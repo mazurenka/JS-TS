@@ -15,7 +15,7 @@ console.log(action2)*/
 
 ////////////////////////////
 
-class User {
+/*class User {
     constructor(name, site, dayOfBirth) {
         this.name = name
         this.site = site
@@ -30,6 +30,57 @@ class User {
 const u1 = new User('Andre', 'google.com', new Date(1900, 1, 1))
 const u2 = new User('Andrei', 'google.com', new Date(1900, 1, 1))
 
+u1.hello()*/
+
+/////////////////////////////////////
+
+/*class User {
+    constructor(name, site, dayOfBirth) {
+        this.name = name
+        this.site = site
+        this.dayOfBirth = dayOfBirth
+        this.counter = 0
+    }
+
+    hello() {
+        this.counter++
+        console.log(`Im a ${this.name} from ${this.site}`)
+    }
+}
+
+const u1 = new User('Andre', 'google.com', new Date(1900, 1, 1))
+const u2 = new User('Andrei', 'google.com', new Date(1900, 1, 1))
+
 u1.hello()
+u2.hello()*/
+
+////////////////////////////////////////////
+
+class User {
+    constructor(name, site, dayOfBirth) {
+        this._name = name
+        this.site = site
+        this.dayOfBirth = dayOfBirth
+        this.counter = 0
+    }
+
+    hello() {
+        this.counter++
+        console.log(`Im a ${this._name} from ${this.site}`)
+    }
+}
+
+const u1 = new User('Andre', 'google.com', new Date(1900, 1, 1))
+const u2 = new User('Andrei', 'google.com', new Date(1900, 1, 1))
+
+console.log(u1._name)
+
+
+
+
+
+
+
+
 
 
