@@ -118,9 +118,7 @@ class User {
 const u1 = new User('Andre', 'google.com', new Date(1900, 1, 1))
 const u2 = new User('Andrei', 'google.com', new Date(1900, 1, 1))
 u1.name = 'Igor'
-let users = [u1, u2]
 
-users.forEach(u => u.hello())
 
 class Coder extends User {
     constructor(name, site, dayOfBirth, tech) {
@@ -150,12 +148,14 @@ class Hacker extends Coder {
 }
 
 const coder1 = new Coder('Andre coder', 'google.com', new Date(1982, 1, 1), 'JS')
-coder1.code()
+// coder1.code()
 
 const hacker = new Hacker('Andre coder', 'google.com', new Date(1982, 1, 1), 'JS')
-hacker.code()
-hacker.hello()
+// hacker.code()
+// hacker.hello()
 
+let users = [u1, u2, coder1, hacker]
+users.forEach(u => u.hello())
 
 
 
