@@ -1,5 +1,3 @@
-import React from "react";
-
 const deleteUser = (userId) => {
     const action = {
         type: 'DELETE-USER',
@@ -18,14 +16,16 @@ console.log(action2)
 
 /////////////////////////////
 
+function commonHello() {
+    console.log(`I am ${this.name} from ${this.site}`)
+}
+
 const userFabric = (name) => {
     const user = {
         name: name,
         site: 'google.com',
-        dateOfBirth: new Date(1900, 1,1),
-        hello() {
-            console.log(`I am ${this.name} from ${this.site}`)
-        }
+        dateOfBirth: new Date(1900, 1, 1),
+        hello: commonHello
     }
     return user
 }
@@ -33,6 +33,6 @@ const userFabric = (name) => {
 const u1 = userFabric('Andre')
 const u2 = userFabric('Dmitriy')
 
-console.log(u1)
-console.log(u2)
+u1.hello()
+u2.hello()
 
