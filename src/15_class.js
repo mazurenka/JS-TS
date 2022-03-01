@@ -56,24 +56,95 @@ u2.hello()*/
 
 ////////////////////////////////////////////
 
+// class User {
+//     #name = ''
+//
+//     constructor(name, site, dayOfBirth) {
+//         this.#name = name
+//         this.site = site
+//         this.dayOfBirth = dayOfBirth
+//         this.counter = 0
+//     }
+//
+//     getName() {
+//         return this.#name
+//     }
+//
+//     setName(value) {
+//         return this.#name = value
+//     }
+//
+//     hello() {
+//         this.counter++
+//         console.log(`Im a ${this.#name} from ${this.site}`)
+//     }
+// }
+//
+// const u1 = new User('Andre', 'google.com', new Date(1900, 1, 1))
+// const u2 = new User('Andrei', 'google.com', new Date(1900, 1, 1))
+//
+// //console.log(u1.#name)
+// console.log(u1.getName())
+// console.log(u1.setName('Andrew'))
+
+
+//////////////////////////////
+
+
 class User {
+    #name = ''
+
     constructor(name, site, dayOfBirth) {
-        this._name = name
+        this.#name = name
         this.site = site
         this.dayOfBirth = dayOfBirth
         this.counter = 0
     }
 
+    get name() {
+        return this.#name
+    }
+
+    set name(value) {
+        return this.#name = value
+    }
+
     hello() {
         this.counter++
-        console.log(`Im a ${this._name} from ${this.site}`)
+        console.log(`Im a ${this.#name} from ${this.site}`)
     }
 }
 
 const u1 = new User('Andre', 'google.com', new Date(1900, 1, 1))
 const u2 = new User('Andrei', 'google.com', new Date(1900, 1, 1))
+u1.name = 'Igor'
+let users = [u1, u2]
 
-console.log(u1._name)
+users.forEach(u => u.hello())
+
+class Coder extends User {
+    constructor(name, site, dayOfBirth, tech) {
+        super(name, site, dayOfBirth);
+        this.tech = tech
+    }
+
+    code() {
+        console.log(`I am ${this.name}, this is my ${this.tech} code: let sum = (a, b) => a + b`)
+    }
+
+    hello() {
+        super.hello();
+        console.log('Go away')
+    }
+}
+
+const coder1 = new Coder('Andre coder', 'google.com', new Date(1982, 1, 1), 'JS')
+
+coder1.hello()
+coder1.code()
+
+
+
 
 
 
